@@ -1,0 +1,24 @@
+<button (click)="logout()">Logout</button>
+
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>email</th>
+    <th>phoneNumber</th>
+    <th>city</th>
+  </tr>
+  <tr *ngFor="let member of memberDetails">
+    <td>{{ member && member._id ? member._id : "-"}}</td>
+    <td>
+      {{ member && member.firstName ? member.firstName : "-"}}
+      {{ member && member.lastName ? member.lastName : "-"}}
+    </td>
+    <td>{{member && member.email ? member.email : "-"}}</td>
+    <td>{{member && member.countryCode ? member.countryCode : '-'}} {{member && member.phoneNumber ? member.phoneNumber:
+      "-"}}
+    </td>
+    <td>{{member && member.city ? member.city : "-"}}</td>
+  </tr>
+</table>
