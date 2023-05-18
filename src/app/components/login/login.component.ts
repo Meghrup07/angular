@@ -32,6 +32,9 @@ export class LoginComponent implements OnInit {
       const token = res.result.token;
       this.localService.setItem('token', token);
       this.router.navigate(['/member']);
+      alert("Login Successfully!")
+    }, (error) => {
+      alert(error.error.message)
     })
   }
 

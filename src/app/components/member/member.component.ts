@@ -21,6 +21,9 @@ export class MemberComponent implements OnInit {
   getMemberDetails() {
     this.memberService.getMember().subscribe((res: any) => {
       this.memberDetails = res.result.users;
+      alert("Member get successfully!")
+    }, (error) => {
+      alert(error.error.message);
     })
   }
 
